@@ -1,0 +1,19 @@
+{
+  "name": "google-news-scraper",
+  "version": "1.0.0",
+  "description": "a web app to scrape and comment on recent google news articles!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezaca/Google-News-Scraper.git"
+  },
+  "author": "rezaca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rezaca/Google-News-Scraper/issues"
+  },
+  "homepage": "https://github.com/rezaca/Google-News-Scraper#readme"
+}
