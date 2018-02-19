@@ -1,0 +1,19 @@
+{{#each articles}}
+<div class="story-body card container" id={{this._id}}>
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{{this.link}}" target="_blank">{{this.title}}</a>
+        </h5>
+        <p class="card-text">{{this.summary}}</p>
+        <form action="/save/{{this._id}}" method="POST">
+            <button type="submit" class="status btn btn-dark btn-sm" value="{{this.status}}">{{this.status}}</button>
+            {{#unless this.note}}
+            <button type="button" class="addnote-button btn btn-dark btn-sm" value="{{this._id}}">Add A Note</button>
+            {{/unless}} {{#if this.note}}
+            <button type="button" class="addnote-button btn btn-dark btn-sm" value="{{this._id}}">Edit Note</button>
+            {{/if}}
+        </form>
+    <img class="media" src="{{this.img}}">
+    </div>
+</div>
+{{/each}}

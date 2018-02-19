@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<title>Coindesk Scraper</title>
+</head>
+
+<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/">Crypto News: Scraped from <span class="text-warning font-weight-bold">Coindesk</span></a>
+			<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+				aria-expanded="false" aria-label="Toggle navigation"></button>
+			<div class="collapse navbar-collapse" id="collapsibleNavId">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" id="all-articles" href="/">All Articles <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="saved-articles" href="/saved">Saved Articles</a>
+					</li>
+				</ul>
+
+				<form class="mr-3 mr-lg-3" action="/scrape" method="GET">
+					<button class="btn btn-outline-dark" type="submit" id="refresh-articles">Click for Latest Crypto News</button>
+				</form>
+				<form class="form-inline my-2 my-lg-0" action="/search" method="POST">
+					<input class="form-control mr-sm-2" type="text" name="search" placeholder="Search for articles" id="search-input">
+					<button class="btn btn-outline-dark my-2 my-sm-0" type="submit" id="search-submit">Search</button>
+				</form>
+			</div>
+		</nav>
+
+	<br>
+	<div id="container">
+		{{{ body }}}
+	</div>
+
+	<script src="/assets/app.js"></script>
+
+
+	<div class="modal fade" id="addnote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document" id="note-displayer">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Note</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h5>Article:
+						<span id="article-title"></span>
+					</h5>
+					<form>
+					<div class="form-group">
+						<label for="note-title" class="col-form-label">Title</label>
+						<input type="text" placeholder="Title" name="title" id="note-title">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label">Note</label>
+						<textarea class="form-control" placeholder="Note" id="note-body"></textarea>
+					</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-note">Close</button>
+					<button class="btn btn-primary" type="submit" id="add-note">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{!-- <div id="addnote">
+		<div id="note-displayer">
+			<h2>Note</h2>
+			<h3>Article:
+				<span id="article-title"></span>
+			</h3>
+			<div id="note">
+				<label for="note-title">Title</label>
+				<br>
+				<input type="text" placeholder="Title" name="title" id="note-title">
+				<br>
+				<label for="note-body">Note</label>
+				<br>
+				<textarea rows="7" placeholder="Note" id="note-body"></textarea>
+				<br>
+				<button type="submit" id="add-note">Save Note</button>
+				<button type="button" id="close-note">Cancel</button>
+			</div>
+		</div>
+	</div> --}}
+
+	<script src="/assets/app.js"></script>
+</body>
+
+</html>
